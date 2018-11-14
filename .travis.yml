@@ -1,7 +1,7 @@
 language: mne
 branches:
   only:
-  - mne
+  - master
 python:
 - '3.6'
 install:
