@@ -1,6 +1,6 @@
 #!/bin/bash
 MNE_VERSION=$(sed 's/^mne==\(.*\)$/\1/' mne_version.txt)
-python download_mne.py
+python3 download_mne.py
 cd mne_source/mne*
 conda env create -n mnedoc -f environment.yml -q
 source activate mnedoc
