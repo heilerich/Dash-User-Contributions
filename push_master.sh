@@ -13,7 +13,7 @@ commit_files() {
 upload_files() {
   git remote rm origin
   git remote add origin https://heilerich:${GH_TOKEN}@github.com/heilerich/Dash-User-Contributions.git > /dev/null 2>&1
-  git push origin master --quiet
+  git push origin master --quiet > /dev/null 2>&1
 }
 
 pull_latest_master() {
@@ -28,10 +28,4 @@ pull_latest_master
 
 commit_files
 
-# Attempt to commit to git only if "git commit" succeeded
-if [ $? -eq 0 ]; then
-  echo "A new commit with changed country JSON files exists. Uploading to GitHub"
-  upload_files
-else
-  echo "No changes in country JSON files. Nothing to do"
-fi
+upload_files

@@ -1,19 +1,28 @@
 language: mne
 branches:
-  only: 
-    - mne 
+  only:
+  - mne
 python:
-  - "3.6"
+- '3.6'
 install:
-  - sudo apt-get update
-  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - export PATH="$HOME/miniconda/bin:$PATH"
-  - hash -r
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update -q conda
-  - conda info -a
+- sudo apt-get update
+- wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+- bash miniconda.sh -b -p $HOME/miniconda
+- export PATH="$HOME/miniconda/bin:$PATH"
+- hash -r
+- conda config --set always_yes yes --set changeps1 no
+- conda update -q conda
+- conda info -a
 script:
-  - bash build_docs.sh
+- bash build_docs.sh
 after_success:
-  - bash push_master.sh
+- bash push_master.sh
+env:
+  global:
+    secure: TdxiUt/zsRHb6555obB7xg1bQs+8gAZkXzGwWlbBY9Ns7Opoi/92XEeh05R4gwd34S53RJg4tc4BP4dWbsDDrnQURqrwgGFykRCoQrZw+vzTeSFwlq8IcyaYduxyUAA70Lr+jaBSU5Kvy9gZnIRb0l+QRg6K41G24FD4pG1YDBjwBM/o57Wwi1/hr1vDBrmj/3gAy9csnjl4pY1LRuuGlwdl8KBIbOtHprK/edOG2DO9pt1KKiI8EqKKfD0Lzp6Dr7mdAPi9CBpdpk5o+i4PzBBTunLe10cGBQVVXX0B5OeT4+vj5RVuyP/ho4p1moITwphp/Vj6Tbd7Yb+21Sm/c94QvdGkwiArPUx6Gb2/7Ge8nQpsw8njybMZ5tHsGmgV77h4LnrNt/iYabYkqvnjz8RySv4rc0MVxbZaBU1Blq03N4hoJwTV8Sa0afGx73gyHNuy/ER7UgVxwv6kCSdzN/Ph15tkSROUXiTXtkZQMtOuJ+ifm8k1ATAUhhWcvd3/vhLVUeFvhd+wkKmtpkTgRXKCU2OvZY7t2U7OuOxqc3L/c7pjcvpqG50aUg5izJzSCEs2KCy3eFYckpl9silFNYbrKBMentXwMqhdX8mnEjTqyERoyzRh65P2+YGMrww7UgIahmBQOrxnHwcA9nhapv5qAnAy2cAY4cbCye0uzkw=
+notifications:
+  pushover:
+    api_key:
+      secure: ip8n8Pn+uV2gDo+Fhf3RjoHCAsqP36kdfnMYTTGvN+Q6OqkCmdHVW6YW8sAhaCiodfHto42/Dp92yuI+cjIU0HcbAeoCjT0xPZUaH7fjJBLlgWr7qV0me3kBx7Jn/0ilJWnPmcP+r5TLjdphvgFUQ1MRnxrkqGByZJbmcyN7DknY5rBQHjORTQAGORHx2DLtMmUvco0KXfQ7g54KPAYyVkvyqrsaBLrY3gqzChd3wNQwdQ32QqmR6JqlGX7uS9ggoWIMbAVr+wTgF3WTk7IT2YTjZMadhBE6z6r+CJ7ij80A2ujlJwdIp0fu4OfD7joA3JCsFdcX5bn8Ms+wq3MiC6xUDnpTDxFWzwWU4gryoHX/shtZlXDuNstj4jJciOrozAcdc8gpJBkCpklaMJY5pwjPSPsuRdJKupukbVfg2GKy7pmK8n/nk+94ggWaISiH0Po2WCn/7hYGq/c6YJQ8VnXbH8mWQms1YTKHmckN8JufYjcgv78n5cpILmSbURc7EfKfZLOANm9Pf3QFU6qDArFrrpN/G5S9XqhalkJ2JxNgEsn3czOh3ZOb26nIMeArqguSl62DaOh5/9bWJN9/1ziCkVO2/LouggeQ3nmvZsBVEns7B7d5p9SYoqiK7z9UKkHt6KP0FsUzIpBuicR9zaMe8rH+QjDrqFJo55HXt6I=
+    users:
+      secure: ll6IDU5kpa+iY5SN8qtWe34MUuD49wi0XPyH3QP5ALUpQcxD0oiYhjFaZW1lW/WPiMq9AEylhztr8p3o+nfwrYRTNasJbNK+NYdV3VstPXP0kz5o6C1d4ir3MC/hRIazLGS+3rDHBy2ZXrKs3UZLBZ/upIyS0e6ac4G43lyM/Opvkgmtgw3SptVLdnBqky+7bXAtUGPrfi2dTfH+msXZasOHZkk0SGnFGzMOouUpRhtUEIyAvmnSqP721Y00YwK08sRTJscNgkDJKYS2AyxWZ74zJY6JRNd35hWUtwwpCttystR7EKRfz+w+1BR8Xdm1RTtilXbklAZv9RceABZxuqoQBe4onPxF9TIMnHg/uVfqJmDCHHRbXHb2IS+AaIMlAkVNEPlZDBoIEyKqGa1gtMp5ZKj4CQcyLrWaKQ5qvtObPAUj0ceh4oQxzbXiEPz6jAll3hAU14kmjzY9FwFssZS8L8DD9zlrrz1ddRfD3XNXjcWzjE5MATady4D1aUs1+/hevIlgEbRUth6XnJkIb+2ObMnJCwsw7+VO73gu1EF59nlsNWo1y01bqyFru0HmB4P3cDlZzlMmy1cL9rChGqIh9rDXdIugxBE8fblx3zf2bho4MV3L2QZhGCEEBzQtf30evg/RjbdyPK5xi9y3ycMyVrWxN63Ku8MLG7NE5o4=
