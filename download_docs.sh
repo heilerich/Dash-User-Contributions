@@ -1,5 +1,10 @@
 #!/bin/bash
 MNE_VERSION=$(sed 's/^mne==\(.*\)$/\1/' mne_version.txt)
+if [ -d "mne-tools.github.io" ]; then
+  git clone --depth 1 https://github.com/mne-tools/mne-tools.github.io
+else
+  pushd mne-tools.github.io && git pull && popd
+fi
 git clone https://github.com/mne-tools/mne-tools.github.io
 cd mne-tools.github.io/
 doc2dash -n MNE -d ../mne_docset/ -i ../mne_docset/icon@2x.png -j -u https://mne-tools.github.io/stable/ stable
