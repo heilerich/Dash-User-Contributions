@@ -1,7 +1,4 @@
 language: python 
-cache:
-  directories:
-    - mne-tools.github.io
 branches:
   only:
     - master
