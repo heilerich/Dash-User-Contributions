@@ -5,7 +5,6 @@ if [ -d "mne-tools.github.io" ]; then
 else
   git clone --depth 1 https://github.com/mne-tools/mne-tools.github.io
 fi
-git clone https://github.com/mne-tools/mne-tools.github.io
 cd mne-tools.github.io/
 doc2dash -n MNE -d ../mne_docset/ -i ../mne_docset/icon@2x.png -j -u https://mne-tools.github.io/stable/ stable
 cd ../mne_docset/
