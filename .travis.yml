@@ -1,4 +1,7 @@
 language: mne
+branches:
+  only: 
+    - mne 
 python:
   - "3.6"
 install:
@@ -12,3 +15,5 @@ install:
   - conda info -a
 script:
   - bash build_docs.sh
+after_success:
+  - bash push_master.sh
