@@ -13,13 +13,14 @@ commit_files() {
 upload_files() {
   git remote rm origin
   git remote add origin https://heilerich:${GH_TOKEN}@github.com/heilerich/Dash-User-Contributions.git > /dev/null 2>&1
-  git push origin master --quiet > /dev/null 2>&1
+  git push origin pr-branch --quiet > /dev/null 2>&1
 }
 
 pull_latest_master() {
-  git remote rm origin https://github.com/Kapeli/Dash-User-Contributions.git
-  git checkout master
-  git pull contrib master
+  git remote rm origin
+  git remote add origin https://github.com/Kapeli/Dash-User-Contributions.git
+  git checkout pr-branch
+  git pull origin master
 }
 
 setup_git
