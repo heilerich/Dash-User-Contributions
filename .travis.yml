@@ -1,22 +1,22 @@
 language: python 
 branches:
   only:
-  - master
+    - master
 python:
-- '3.6'
+  - '3.6'
 install:
-- sudo apt-get update
-- wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-- bash miniconda.sh -b -p $HOME/miniconda
-- export PATH="$HOME/miniconda/bin:$PATH"
-- hash -r
-- conda config --set always_yes yes --set changeps1 no
-- conda update -q conda
-- conda info -a
+  - sudo apt-get update
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
 script:
-- bash build_docs.sh
+  - bash build_docs.sh
 after_success:
-- bash push_master.sh
+  - bash push_master.sh
 env:
   global:
     secure: TdxiUt/zsRHb6555obB7xg1bQs+8gAZkXzGwWlbBY9Ns7Opoi/92XEeh05R4gwd34S53RJg4tc4BP4dWbsDDrnQURqrwgGFykRCoQrZw+vzTeSFwlq8IcyaYduxyUAA70Lr+jaBSU5Kvy9gZnIRb0l+QRg6K41G24FD4pG1YDBjwBM/o57Wwi1/hr1vDBrmj/3gAy9csnjl4pY1LRuuGlwdl8KBIbOtHprK/edOG2DO9pt1KKiI8EqKKfD0Lzp6Dr7mdAPi9CBpdpk5o+i4PzBBTunLe10cGBQVVXX0B5OeT4+vj5RVuyP/ho4p1moITwphp/Vj6Tbd7Yb+21Sm/c94QvdGkwiArPUx6Gb2/7Ge8nQpsw8njybMZ5tHsGmgV77h4LnrNt/iYabYkqvnjz8RySv4rc0MVxbZaBU1Blq03N4hoJwTV8Sa0afGx73gyHNuy/ER7UgVxwv6kCSdzN/Ph15tkSROUXiTXtkZQMtOuJ+ifm8k1ATAUhhWcvd3/vhLVUeFvhd+wkKmtpkTgRXKCU2OvZY7t2U7OuOxqc3L/c7pjcvpqG50aUg5izJzSCEs2KCy3eFYckpl9silFNYbrKBMentXwMqhdX8mnEjTqyERoyzRh65P2+YGMrww7UgIahmBQOrxnHwcA9nhapv5qAnAy2cAY4cbCye0uzkw=
