@@ -17,9 +17,9 @@ upload_files() {
 }
 
 pull_latest_master() {
+  git checkout -b origin/pr-branch
   git remote rm origin
   git remote add origin https://github.com/Kapeli/Dash-User-Contributions.git
-  git checkout pr-branch
   git pull origin master
 }
 
