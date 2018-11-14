@@ -1,11 +1,12 @@
-import requests
-from urllib.request import urlretrieve
+from urllib.request import urlretrieve, urlopen 
 import zipfile
 import os
+import json
 
 url = "https://api.github.com/repos/mne-tools/mne-python/tags"
-resp = requests.get(url)
-data = resp.json()
+res = urlopen(url)
+res_body = res.read()
+data = json.loads(res_body.decode("utf-8"))
 
 with open("mne_version.txt") as f:
     version = f.read().split("==")[1].replace("\n", "")
