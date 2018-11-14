@@ -7,7 +7,7 @@ python:
 install:
   - pip install doc2dash
 script:
-  - bash build_docs.sh
+  - bash download_docs.sh
 after_success:
   - bash push_master.sh
 env:
