@@ -9,7 +9,7 @@ commit_files() {
   git add docsets/*
   git stash push docsets/*
   git checkout -f -b pr-branch origin/master
-  git stash apply
+  git checkout stash -- .
   git commit -m "Updating to MNE version $MNE_VERSION (Via Travis Build $TRAVIS_BUILD_ID)"
 }
 
