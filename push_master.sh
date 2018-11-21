@@ -7,6 +7,9 @@ setup_git() {
 commit_files() {
   MNE_VERSION=$(cat docsets/MNE/docset.json | sed -n 's/.*version": "\(.*\)\".*/\1/p')
   git add docsets/*
+  git stash push docsets/*
+  git checkout -f -b pr-branch origin/master
+  git stash apply
   git commit -m "Updating to MNE version $MNE_VERSION (Via Travis Build $TRAVIS_BUILD_ID)"
 }
 
@@ -20,9 +23,6 @@ pull_latest_master() {
   git remote rm origin
   git remote add origin https://github.com/Kapeli/Dash-User-Contributions.git
   git fetch
-  git stash push docsets/*
-  git checkout -f -b pr-branch origin/master
-  git stash apply
 }
 
 setup_git
