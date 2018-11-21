@@ -20,8 +20,8 @@ pull_latest_master() {
   git remote rm origin
   git remote add origin https://github.com/Kapeli/Dash-User-Contributions.git
   git fetch
-  git stash
-  git checkout -b pr-branch origin/master
+  git stash push docsets/*
+  git checkout -f -b pr-branch origin/master
   git stash apply
 }
 
