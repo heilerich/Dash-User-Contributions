@@ -6,9 +6,10 @@ setup_git() {
 
 commit_files() {
   MNE_VERSION=$(cat docsets/MNE/docset.json | sed -n 's/.*version": "\(.*\)\".*/\1/p')
-  git add docsets/*
-  git stash push docsets/*
+  git add docsets/MNE/*
+  git stash push docsets/MNE/*
   git checkout -f -b pr-branch origin/master
+  git clean -f
   git checkout stash -- .
   git commit -m "Updating to MNE version $MNE_VERSION (Via Travis Build $TRAVIS_BUILD_ID)"
 }

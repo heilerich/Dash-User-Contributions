@@ -13,5 +13,3 @@ rm -rf MNE.docset
 cat docset.json | sed "s/\(\"version\": \"\)\"/\1$MNE_VERSION\"/g" | tee docset.json
 cd ..
 mv mne_docset docsets/MNE
-rm download_docs.sh
-rm mne_version.txt
