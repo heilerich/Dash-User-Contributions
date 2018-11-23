@@ -1,4 +1,0 @@
-Archive "React_Native.tgz" was processed at this location, pushed to the CDN and completely removed from git.
-
-Date: 2018-01-27 19:08:01 +0000
-SHA1: 8cc87ff2997e90bab041886f1302a6746634cc01

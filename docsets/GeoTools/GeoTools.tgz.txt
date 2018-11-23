@@ -1,4 +1,0 @@
-Archive "GeoTools.tgz" was processed at this location, pushed to the CDN and completely removed from git.
-
-Date: 2018-03-22 10:00:52 +0000
-SHA1: 522b650b13ec3e34485f63f96317e5b5218cc9ca

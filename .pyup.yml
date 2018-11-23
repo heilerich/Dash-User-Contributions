@@ -21,7 +21,7 @@ search: False
 # default: empty
 # allowed: list
 requirements:
-  - mne_version.txt
+  - versions.txt
 
 # configure the branch prefix the bot is using
 # default: pyup-

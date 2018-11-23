@@ -1,9 +1,0 @@
-{
-    "name": "Scrapy",
-    "version": "1.5",
-    "archive": "Scrapy.tgz",
-    "author": {
-        "name": "Monson Shao",
-        "link": "https://github.com/holymonson"
-    }
-}

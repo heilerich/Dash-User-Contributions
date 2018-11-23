@@ -1,4 +1,0 @@
-Archive "Jest.tgz" was processed at this location, pushed to the CDN and completely removed from git.
-
-Date: 2018-06-04 07:03:04 +0000
-SHA1: 0e298f3bd4fb33b17b839d3a87e2d4f0416f03c0

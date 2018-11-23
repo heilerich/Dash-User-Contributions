@@ -1,9 +1,0 @@
-{
-    "name": "boto3",
-    "version": "1.7.78",
-    "archive": "boto3.tgz",
-    "author": {
-        "name": "Randall Kahler",
-        "link": "https://twitter.com/angrychimp"
-    }
-}
