@@ -19,7 +19,7 @@ git config --global user.name "heilerich"
 
 git clone https://github.com/Kapeli/Dash-User-Contributions.git
 
-yes | cp -f template/* Dash-User-Contributions/docsets/MNE/*
+yes | cp -f template/* Dash-User-Contributions/docsets/MNE/
 cd Dash-User-Contributions
 git checkout -b pr-branch
 git add *
