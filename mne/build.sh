@@ -11,9 +11,11 @@ doc2dash -n MNE -d ../template/ -i ../template/icon@2x.png -j -u https://mne-too
 cd ../template/
 tar --exclude='.DS_Store' -cvzf MNE.tgz MNE.docset
 rm -rf MNE.docset
+cat docset.json
 cat docset.json | sed "s/\(\"version\": \"\)\"/\1$MNE_VERSION\"/g" | tee docset.json
-cd ..
+cat docset.json
 
+cd ..
 git config --global user.email "code@fehe.eu"
 git config --global user.name "heilerich"
 
