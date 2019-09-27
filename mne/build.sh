@@ -9,7 +9,7 @@ fi
 cd mne-tools.github.io/
 doc2dash -n MNE -d ../template/ -i ../template/icon@2x.png -j -u https://mne-tools.github.io/stable/ stable
 cd ../template/
-tar --exclude='.DS_Store' -cvzf MNE.tgz MNE.docset
+GZIP=-9 tar --exclude='.DS_Store' -cvzf MNE.tgz MNE.docset
 rm -rf MNE.docset
 cat docset.json
 cat docset.json | sed "s/\(\"version\": \"\)\"/\1$MNE_VERSION\"/g" | tee docset.json
